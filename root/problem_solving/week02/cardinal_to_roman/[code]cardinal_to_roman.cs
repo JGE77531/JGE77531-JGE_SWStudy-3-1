@@ -3,22 +3,16 @@ internal class Program
     private static void Main(string[] args)
     {
         string[] one = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
-        //1~9
         string[] ten = { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" };
-        //10이 없는 경우, 10배수
         string[] hundred = { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" };
-        //100이 없는 경우, 100배수
         string[] thousand = { "", "M", "MM", "MMM" };
-        //1000이 없는 경우, 1000배수
 
         int one_index;
         int ten_index;
         int hundred_index;
         int thousand_index;
-        //로마자를 담아둔 인덱스를 불러올 변수
 
         string result;
-        //결과
 
         while (true)
         {
