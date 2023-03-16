@@ -132,7 +132,7 @@ internal class Class1
                 prev = current;
             }
 
-            Console.Write("입력된 로마자 " + roman + "을 숫자로 변환한 결과 값은 : ");
+            Console.Write("입력된 로마 숫자 " + roman + "을 숫자로 변환한 결과 값은 : ");
             Console.WriteLine("[" + result + "] 입니다.\n");
             break;
         }
