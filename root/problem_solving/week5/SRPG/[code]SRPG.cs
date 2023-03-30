@@ -119,8 +119,6 @@ class Map
         enemyY += nextDirection.dy;
         data[enemyY, enemyX] = '3';
     }
-
-
 }
 
 class Program
