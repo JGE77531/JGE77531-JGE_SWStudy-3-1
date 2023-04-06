@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Map
 {
@@ -79,18 +79,18 @@ class Map
     // 적의 위치를 플레이어 쪽으로 이동시키는 함수
     public void MoveEnemy()
     {
-        // 적과 플레이어의 현재 위치에서 거리를 계산합니다.
+        // 적과 플레이어의 현재 위치에서 거리를 계산\
         int distanceX = playerX - enemyX;
         int distanceY = playerY - enemyY;
 
-        // 상하좌우 중 이동 가능한 방향을 리스트에 저장합니다.
+        // 상하좌우 중 이동 가능한 방향을 리스트에 저장
         List<(int dx, int dy)> directions = new List<(int dx, int dy)>();
         if (enemyX > 0 && data[enemyY, enemyX - 1] == 0) directions.Add((-1, 0));
         if (enemyX < MapSize - 1 && data[enemyY, enemyX + 1] == 0) directions.Add((1, 0));
         if (enemyY > 0 && data[enemyY - 1, enemyX] == 0) directions.Add((0, -1));
         if (enemyY < MapSize - 1 && data[enemyY + 1, enemyX] == 0) directions.Add((0, 1));
 
-        // 이동 가능한 방향 중에서 플레이어에게 가까워지는 방향을 선택합니다.
+        // 이동 가능한 방향 중에서 플레이어에게 가까워지는 방향을 선택
         int minDistance = int.MaxValue;
         (int dx, int dy) nextDirection = (0, 0);
         foreach (var direction in directions)
@@ -98,7 +98,7 @@ class Map
             int newX = enemyX + direction.dx;
             int newY = enemyY + direction.dy;
 
-            // 다음 위치가 플레이어와 겹치는 경우 해당 방향으로 이동하지 않습니다.
+            // 다음 위치가 플레이어와 겹치는 경우 해당 방향으로 이동하지 않음
             if (newX == playerX + 1 && newY == playerY + 1 && newX == playerX - 1 && newY == playerY - 1)
             {
                 continue;
@@ -114,7 +114,7 @@ class Map
             }
         }
 
-        // 선택된 방향으로 이동합니다.
+        // 선택된 방향으로 이동, 이동 경로 표시
         enemyX += nextDirection.dx;
         enemyY += nextDirection.dy;
         data[enemyY, enemyX] = '3';
@@ -127,7 +127,6 @@ class Program
     {
         Map map = new Map();
 
-        // 적을 이동시키는 코드를 추가합니다.
         while (true)
         {
             Console.Clear();
